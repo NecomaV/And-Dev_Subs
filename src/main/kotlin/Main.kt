@@ -1,6 +1,17 @@
-fun main(args: Array<String>) {
-    val temperature = 10
-    val isHot = if (temperature > 50) true else false
-    println(isHot)
+import java.util.*
 
+fun main(args: Array<String>) {
+    feedTheFish()
+
+}
+fun feedTheFish() {
+    val day = randomDay()
+    val food = "pellets"
+    println ("Today is $day and the fish eat $food")
+}
+
+fun randomDay() : String {
+    val week = arrayOf ("Monday", "Tuesday", "Wednesday", "Thursday",
+        "Friday", "Saturday", "Sunday")
+    return week[Random().nextInt(week.size)]
 }
