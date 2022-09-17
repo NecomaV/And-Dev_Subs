@@ -1,7 +1,6 @@
 fun main(args: Array<String>) {
-    printHello()
+    val temperature = 10
+    val isHot = if (temperature > 50) true else false
+    println(isHot)
 
-}
-fun printHello() {
-    println ("Hello World")
 }
