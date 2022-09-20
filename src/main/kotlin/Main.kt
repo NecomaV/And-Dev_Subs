@@ -3,7 +3,7 @@ import java.util.*
 fun main(args: Array<String>) {
     feedTheFish()
 
-    shouldChangeWater("Sunday")
+    shouldChangeWater("")
 
 }
 fun fishFood (day : String) : String {
@@ -31,14 +31,21 @@ fun randomDay() : String {
 }
 
 
-fun swim(speed: String = "fast") {
-    println("swimming $speed")
+fun swim(speed : String = "fast"){
+    println("Swim Speed is : $speed")
+
 }
-fun shouldChangeWater (day: String, temperature: Int = 22, dirty: Int = 20): Boolean {
-    return when {
-        temperature > 30 -> true
-        dirty > 30 -> true
-        day == "Sunday" ->  true
+
+fun shouldChangeWater (day : String, temperature : Int = 22, dirtyLevel : Int = 20) : Boolean {
+    return when{
+        isTooHot(temperature) -> true
+        isDirty(dirtyLevel) -> true
+        isSunday(day) -> true
         else -> false
     }
 }
+
+
+fun isTooHot(temperature: Int) = temperature > 30
+fun isDirty(dirtyLevel: Int) = dirtyLevel > 30
+fun isSunday(day: String) = day == "Sunday"
