@@ -18,7 +18,7 @@ open class Aquarium (var length: Int = 100, var width: Int = 20, var height: Int
     open var volume: Int
         get() = width * height * length / 1000
         set(value) {
-            height = (value * 1000) / (width * length)
+            height = (value  * 1000) / (width * length)
         }
     open val shape = "rectangle"
     open var water: Double = 0.0
